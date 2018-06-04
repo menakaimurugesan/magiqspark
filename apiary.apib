@@ -1,85 +1,10 @@
 FORMAT: 1A
 HOST: http://polls.apiblueprint.org/
 
-# magiqspark
+# Magiqspark API
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+It is a collection of API end points allowing consumers to work with its entities.
 
-## Questions Collection [/questions]
-
-### List All Questions [GET]
-
-+ Response 200 (application/json)
-
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
-
-    + Body
-
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
-            
-            
 ## Scales Collection [/Scale s]
 
 ### List All Scales [GET]
@@ -88,42 +13,22 @@ form of choices.
 
         [
             {
-                "Scale ": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
+                "Name ": "Personal",
+                "Description" : "Personal Scale",
+                "Created at": "2015-08-05T08:40:51.620Z"
             }
         ]
 
 ### Create a New Scale  [POST]
 
 You may create your own Scale  using this action. It takes a JSON
-object containing a Scale  and a collection of answers in the
-form of choices.
+object containing Scale details
 
 + Request (application/json)
 
         {
-            "Scale ": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "Name ": "Name of the scale",
+            "Descripton": "Details about the scale"
         }
 
 + Response 201 (application/json)
@@ -135,23 +40,9 @@ form of choices.
     + Body
 
             {
-                "Scale ": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+                "Name ": "Personal",
+                "Description" : "Personal Scale",
+                "Created at": "2015-08-05T08:40:51.620Z"
             }
             
 ## Behaviours Collection [/Behaviour s]
@@ -184,9 +75,8 @@ form of choices.
 
 ### Create a New Behaviour  [POST]
 
-You may create your own Behaviour  using this action. It takes a JSON
-object containing a Behaviour  and a collection of answers in the
-form of choices.
+You may create your own Behaviour using this action. It takes a JSON
+object containing Behaviour details.
 
 + Request (application/json)
 
@@ -259,8 +149,7 @@ form of choices.
 ### Create a New Group  [POST]
 
 You may create your own Group  using this action. It takes a JSON
-object containing a Group  and a collection of answers in the
-form of choices.
+object containing Group details
 
 + Request (application/json)
 
